@@ -1,0 +1,35 @@
+﻿@model Exercise
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-7">
+            <!-- Portfolio Item Heading -->
+            <h1 class="my-4">
+                <small>@Model.Title</small>
+            </h1>
+            <img class="img-fluid" src="@Model.Image" alt="Sample Photo" style="border: 1px solid">
+        </div>
+
+        <div class="col-md-4">
+            <h3 class="mb-3" style="margin-top:35px">Execution Technique</h3>
+            <p>@Model.Description</p>
+            <h3 class="my-3">Methodology</h3>
+            <ul>
+                <li>Amount of Sets - @Model.QuantitySets</li>
+                <li>Amount of Reps - @Model.QuantityReps</li>
+            </ul>
+            <h3 class="my-3">General Information</h3>
+            <ul>
+                <li>Difficulty - @Model.DificultyCategory</li>
+                <li>Location - @Model.LocationCategory</li>
+                <li>Body Part - @Model.BodyPartCategory</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->

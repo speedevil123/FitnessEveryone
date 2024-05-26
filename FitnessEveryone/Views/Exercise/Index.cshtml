@@ -1,0 +1,98 @@
+﻿@using FitnessEveryone.Models;
+@using FitnessEveryone.Data.Enum;
+@using FitnessEveryone.ViewModels;
+@model IndexExerciseViewModel
+
+<div class="row">
+    <div class="col">
+        <div class="card mt-4">
+            <div class="card-header">
+                Random Exercise
+            </div>
+            <div class="card-body mt-2">
+                <form method="post" class="excercise_generation" asp-action="RandomExercise" enctype="multipart/form-data">
+                    <div class="three_btns_exc mt-3">
+                        <div class="d-grid gap-3">
+                            <div class="form-group">
+                                <label asp-for="Exercise.LocationCategory">Location</label>
+                                <select asp-for="Exercise.LocationCategory" asp-items="@Html.GetEnumSelectList<LocationCategory>()" class="form-control">
+                                    <option selected="selected" value="">--> <--</option>
+                                </select>
+                                <span asp-validation-for="Exercise.LocationCategory" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Exercise.BodyPartCategory">BodyPart</label>
+                                <select asp-for="Exercise.BodyPartCategory" asp-items="@Html.GetEnumSelectList<BodyPartCategory>()" class="form-control">
+                                    <option selected="selected" value="">--> <--</option>
+                                </select>
+                                <span asp-validation-for="Exercise.BodyPartCategory" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="size_btn_index_excersise" class="btn btn-outline-dark mt-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mt-4">
+            <div class="card-header">
+                Workout Program
+            </div>
+            <div class="card-body mt-2">
+                <form method="post" class="excercise_generation" asp-action="WorkoutProgram" asp-controller="Exercise" enctype="multipart/form-data">
+                    <div class="three_btns_exc mt-3">
+                        <div class="d-grid gap-3">
+                            <div class="form-group">
+                                <label asp-for="Height">Enter Your Height:</label>
+                                <input asp-for="Height" class="form-control" type="number" placeholder="Height">
+                                <span asp-validation-for="Height" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Weigth">Enter Your Weigth:</label>
+                                <input asp-for="Weigth" class="form-control" type="=number" placeholder="Age">
+                                <span asp-validation-for="Weigth" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="size_btn_index_excersise" class="btn btn-outline-dark mt-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mt-4">
+            <div class="card-header">
+                List of Exercises
+            </div>
+            <div class="card-body mt-2">
+                <form method="post" class="excercise_generation" asp-action="ListExercise" enctype="multipart/form-data">
+                    <div class="three_btns_exc mt-3">
+                        <div class="d-grid gap-3">
+                            <div class="form-group">
+                                <label asp-for="Exercise.LocationCategory">Location</label>
+                                <select asp-for="Exercise.LocationCategory" asp-items="@Html.GetEnumSelectList<LocationCategory>()" class="form-control">
+                                    <option value="3">--> <--</option>
+                                </select>
+                                <span asp-validation-for="Exercise.LocationCategory" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Exercise.BodyPartCategory">BodyPart</label>
+                                <select asp-for="Exercise.BodyPartCategory" asp-items="@Html.GetEnumSelectList<BodyPartCategory>()" class="form-control">
+                                    <option value="3">--> <--</option>
+                                </select>
+                                <span asp-validation-for="Exercise.BodyPartCategory" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        
+                        <button type="submit" id="size_btn_index_excersise" class="btn btn-outline-dark mt-2">Submit</button>
+                        <a id="all_ex_button" class="btn btn-outline-link mt-2" aria-current="page" asp-controller="Exercise" asp-action="AllExercise">All Exercises</a>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+

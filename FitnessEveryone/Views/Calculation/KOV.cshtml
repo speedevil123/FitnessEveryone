@@ -1,0 +1,22 @@
+﻿@using FitnessEveryone.Data.Enum;
+@using FitnessEveryone.ViewModels;
+@model CalculationViewModel
+
+<div class="col-md-6 offset-3 mt-5">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <form method="post" asp-action="KOV" asp-controller="Calculation" class="form-control">
+            <div class="mb-2">
+                <label asp-for="Weight" class="form-label">Weight</label>
+                <input asp-for="Weight" class="form-control w-75" placeholder="Weight" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <button type="submit" id="size_btn_index_excersise" class="btn btn-outline-dark mt-2" style="font-size: 17px">Submit</button>
+                <div class="col-md-4">
+                    <div class="mb-2 mt-3">
+                        <label>Basal Metabolic Rate</label>
+                        <input type="text" value="@Model.KOV" readonly />
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>

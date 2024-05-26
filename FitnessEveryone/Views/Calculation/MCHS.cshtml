@@ -1,0 +1,22 @@
+﻿@using FitnessEveryone.Data.Enum;
+@using FitnessEveryone.ViewModels;
+@model CalculationViewModel
+
+<div class="col-md-6 offset-3 mt-5">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <form method="post" asp-action="MCHS" asp-controller="Calculation" class="form-control">
+            <div class="mb-2">
+                <label asp-for="Age" class="form-label">Age</label>
+                <input asp-for="Age" class="form-control w-75" placeholder="Age" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <button type="submit" id="size_btn_index_excersise" class="btn btn-outline-dark mt-2" style="font-size: 17px">Submit</button>
+            <div class="col-md-4">
+                <div class="mb-2 mt-3">
+                    <label>Maximum Heart Rate</label>
+                    <input type="text" value="@Model.MCHS" readonly />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
