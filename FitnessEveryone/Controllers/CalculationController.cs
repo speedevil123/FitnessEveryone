@@ -12,7 +12,7 @@ namespace FitnessEveryone.Controllers
             return View();
         }
 
-        //PZT
+        //THR
         public IActionResult PZT()
         {
             return View(new CalculationViewModel());
@@ -32,7 +32,7 @@ namespace FitnessEveryone.Controllers
                 return View(calcVM);
             }
         }
-        //KOV
+        //BMR
         public IActionResult KOV()
         {
             return View(new CalculationViewModel());
@@ -52,7 +52,7 @@ namespace FitnessEveryone.Controllers
                 return View(calcVM);
             }
         }
-        //MCHS
+        //MHR
         public IActionResult MCHS()
         {
             return View(new CalculationViewModel());
@@ -73,7 +73,7 @@ namespace FitnessEveryone.Controllers
             }
         }
 
-        //BJU
+        //PFC
         public IActionResult BJU()
         {
             return View(new CalculationViewModel());
@@ -95,7 +95,7 @@ namespace FitnessEveryone.Controllers
                 return View(calcVM);
             }
         }
-        //SNK
+        //DNR
         public IActionResult SNK()
         {
             return View(new CalculationViewModel()); 
@@ -124,7 +124,7 @@ namespace FitnessEveryone.Controllers
         }
 
 
-        //IMT
+        //BMI
         public IActionResult IMT()
         {
             return View(new CalculationViewModel());
