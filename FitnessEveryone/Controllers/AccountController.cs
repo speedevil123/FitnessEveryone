@@ -19,7 +19,6 @@ namespace FitnessEveryone.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
-        [HttpGet]
         public IActionResult Login()
         {
             var response = new LoginViewModel();
@@ -41,7 +40,7 @@ namespace FitnessEveryone.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
                     if(result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Exercise");
                     }
                 }
                 //Password is incorrect
@@ -84,14 +83,14 @@ namespace FitnessEveryone.Controllers
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Exercise");
         }
 
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Exercise");
         }
     }
 }

@@ -6,6 +6,7 @@ using FitnessEveryone.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Specialized;
+using System.Diagnostics;
 
 namespace FitnessEveryone.Controllers
 {
@@ -276,7 +277,7 @@ namespace FitnessEveryone.Controllers
             };
             return View(exVM);
         }
-
+        //NotTested
         [HttpPost]
         public async Task<IActionResult> Edit(int id, EditExerciseViewModel exVM)
         {
@@ -319,6 +320,11 @@ namespace FitnessEveryone.Controllers
             {
                 return View(exVM);
             }
+        }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
